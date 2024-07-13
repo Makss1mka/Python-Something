@@ -1,20 +1,20 @@
 
 class Queue:
     class Element:
-        def __init__(self, data) -> None:
+        def __init__(self, data: any) -> None:
             self.data = data
             self.__next = None
 
-        def set_next(self, next_element) -> None:
+        def set_next(self, next_element: object) -> None:
             if isinstance(next_element, Queue.Element) == False: return
 
             self.__next = next_element 
 
-        def get_next(self):
+        def get_next(self) -> object:
             return self.__next
     
     class Iterator:
-        def __init__(self, first_element) -> object:
+        def __init__(self, first_element: object) -> object:
             self.__counter = 0
             self.__current_element = first_element
 
@@ -59,7 +59,7 @@ class Queue:
 
         return poped_element.data
 
-    def peek(self):
+    def peek(self) -> any:
         return self.__first.data
 
     def extend(self, iterable: any) -> None:
